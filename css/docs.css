@@ -55,3 +55,7 @@ body {
 .attribution {
   float: right;
 }
+
+.lead {
+  font-size: 20px;
+}
