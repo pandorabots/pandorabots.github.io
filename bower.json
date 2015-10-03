@@ -1,0 +1,20 @@
+{
+  "name": "pandorabots.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pandorabots/pandorabots.github.io",
+  "authors": [
+    "Daniel Fried <daniel.fried@pandorabots.com>"
+  ],
+  "description": "Pandorabots documentation site",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "~4.4.0"
+  }
+}

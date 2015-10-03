@@ -1,0 +1,42 @@
+<div class="site-sidebar">
+
+  <h4 style="cursor: pointer;"><a href="/"><i class="fa fa-home"></i> Docs Home</a></h4>
+  <h4 style="cursor: pointer;"><a href="/about">About Pandorabots</a></h4>
+
+  <h4 id="aimlReferenceCollapseIcon" style="cursor: pointer;">AIML Reference <i class="fa fa-angle-right"></i></h4>
+  <div class="collapse" id="aimlReferenceCollapse">
+    <ul class="list-unstyled">
+      {% for element in site.aiml %}
+      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <h4 id="tutorialsCollapseIcon" style="cursor: pointer;">Tutorials <i class="fa fa-angle-right"></i></h4>
+  <div class="collapse" id="tutorialsCollapse">
+    <ul class="list-unstyled">
+      {% for element in site.tutorials %}
+      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <h4 id="integrationsCollapseIcon" style="cursor: pointer;">Integrations <i class="fa fa-angle-right"></i></h4>
+  <div class="collapse" id="integrationsCollapse">
+    <ul class="list-unstyled">
+      {% for element in site.integrations %}
+      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <h4 id="articlesCollapseIcon" style="cursor: pointer;">Articles <i class="fa fa-angle-right"></i></h4>
+  <div class="collapse" id="articlesCollapse">
+    <ul class="list-unstyled">
+      {% for element in site.articles %}
+      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+</div>

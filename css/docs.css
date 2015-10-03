@@ -1,0 +1,57 @@
+h1, h2, h3, h4 {
+  margin-top: 0px;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 70px;
+}
+
+.brand {
+  font-family: 'Comfortaa', cursive;
+  font-size: 36px;
+}
+
+.tile {
+  height: 100px;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  border-right: 1px solid #DDD;
+  display: block;
+}
+
+.tile:nth-last-of-type(1) {
+  border-right: none;
+}
+
+.tile:hover {
+  background-color: #f5f5f5;
+}
+
+.tile-panel {
+  padding: 0;
+}
+
+.tile-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 16px;
+}
+
+.tile-link {
+  display: block;
+  height: 100%;
+}
+
+.site-sidebar h4 {
+  margin-top: 0px;
+}
+
+.attribution {
+  float: right;
+}
