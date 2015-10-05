@@ -47,7 +47,7 @@ Because the Pandorabots web client requires cookies, you'll have to either enabl
 
 **Chat interface**
 
-![](/content/images/2014/11/Screen-Shot-2014-11-14-at-12-18-38-PM.png)
+![]({{ site.baseurl }}/images/firebase1.png)
 
 The chat interface is very similar to the one we used in the Bot Possession tutorial, however, our Javascript is handling each interaction a bit differently. We're relying heavily on the `sessionid` that Pandorabots uses to identify conversations. If no `sessionid` is passed in the the Talk API, then Pandorabots will return one in the response that can be passed in to subsequent requests.
 
@@ -55,11 +55,11 @@ The `sessionid` is distinct from the `client_name` used to identify your users. 
 
 **Talk logs page**
 
-![](/content/images/2014/11/Screen-Shot-2014-11-14-at-12-18-51-PM.png)
+![]({{ site.baseurl }}/images/firebase2.png)
 
 This page will display new conversations as they are initialized when end users open a new chat interface. Each row of the table represents a new conversation, identified by a timestamp, `client_name`, and `sessionid`. Clicking on a `sessionid` will open a modal dialog with the contents of that conversation.
 
-![](/content/images/2014/11/Screen-Shot-2014-11-14-at-12-19-00-PM.png)
+![]({{ site.baseurl }}/images/firebase3.png)
 
 Because we have attached event listeners for each individual conversation, new interactions will be displayed in the modal as they arrive.
 
