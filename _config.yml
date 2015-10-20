@@ -30,3 +30,6 @@ collections:
   articles:
     output: true
     permalink: /articles/:path/
+  modules:
+    output: true
+    permalink: /modules/:path/

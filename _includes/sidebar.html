@@ -39,4 +39,13 @@
     </ul>
   </div>
 
+  <h4 id="modulesCollapseIcon" style="cursor: pointer;">Bot Modules <i class="fa fa-angle-down"></i></h4>
+  <div class="collapse in" id="modulesCollapse">
+    <ul class="list-unstyled">
+      {% for element in site.modules %}
+      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
 </div>
