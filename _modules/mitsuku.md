@@ -19,7 +19,7 @@ You should store these as a bot property in your bot’s .properties file:
 
 ## Routing to Mitsuku
 
-In order to integrate the Mitsuku Module with your bot, you’ll have to include some AIML to route inputs from your users. The <sraix> element tells your bot to send some text to another bot on the server:
+In order to integrate the Mitsuku Module with your bot, you’ll have to include some AIML to route inputs from your users. The `<sraix>` element tells your bot to send some text to another bot on the server:
 
     <!-- mitsukumodule request handler from routes.aiml -->
     <category>
