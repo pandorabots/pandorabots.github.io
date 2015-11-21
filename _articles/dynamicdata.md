@@ -30,14 +30,14 @@ You can use Pandorabots to parse the meaning of the question, and return an appr
     <category>
       <pattern>WHAT MEDICATION DO I NEED TO TAKE TODAY</pattern>
       <template>
-        Here is your medication schedule: {{ user.schedule }}.
+        {% raw %}Here is your medication schedule: {{ user.schedule }}.{% endraw %}
       </template>
     </category>
 
 Now, your application can look up Mary’s PHI in the database (indexed here by client_name), and render it in the bot’s response as needed:
 
     # pseudocode
-    template = "Here is your medication schedule: {{ user.schedule }}."
+    template = "Here is your medication schedule: {% raw %}{{ user.schedule }}{% endraw %}."
     user = database.getUser('aiaas-djf-user-101')
     response = mustache.render(template, user)
 
@@ -64,5 +64,5 @@ If you have the information elsewhere, such as in a database or via a third-part
 
     <category>
       <pattern>WHAT IS ASPIRIN</pattern>
-      <template>Aspirin: {{ drugs.aspirin }}</template>
+      <template>{% raw %}Aspirin: {{ drugs.aspirin }}{% endraw %}</template>
     </category>
