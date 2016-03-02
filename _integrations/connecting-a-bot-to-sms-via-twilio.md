@@ -3,103 +3,48 @@ layout: integrations
 title: Twilio
 ---
 
-# Connecting a bot to SMS via Twilio
+# Connecting a chatbot to Twilio
 
-## Introduction
+We've had a lot of interest recently from users wishing to connect their Pandorabot to messaging services like Twilio. In today's post, we'll take a look at how the Twilio platform works with apps, and how it can play with the Pandorabots API.
 
-Suppose you've created a bot that you want to introduce to a larger audience. It could be a functional bot that answers questions about a product or service that your company offers, or a personality based bot that champions your brand. It could just be your own personal bot that tells jokes and funny stories, and you want your friends to be able to interact with it in a new and exciting way. Imagine that instead of having to download a new app, or go to a chat page on the internet, people could just send your bot a simple text message. Well, now they can, using Pandorabots and any third party messaging web service.
+And thanks to Heroku's awesome [app.json Schema](https://devcenter.heroku.com/articles/app-json-schema), we've also made it ridiculously easy to get your SMS-enabled chatbot up and running.
 
-## Overview
-This blog post demonstrates how to connect a Pandorabot to SMS using [Twilio](https://www.twilio.com/). Twilio is a cloud communications service which gives developers the ability to programmatically send and receive text messages and phone calls, among other things. By the end of this tutorial, you will have a simple app that will enable you to send and receive text messages from your Pandorabot. If you want an example, you can text Alice, the award-winning chatbot who inspired the movie *Her*, at this number: **1 724-359-4064**.
+This post assumes you've already got a [chatbots.io](https://developer.pandorabots.com/) account, and have created a bot that can be reached via the Pandorabots API. For more information, see  [Basic Bot Deployment](http://blog.pandorabots.com/basic-bot-deployment/) or [download the CLI](https://github.com/pandorabots/pb-cli) to get started.
 
-## First Steps
+## Setting up your Twilio app
 
-This tutorial assumes you have a bot deployed to our server. If you don’t have a bot yet, don’t worry, it’s easy to build one. Simply follow the instructions in our [Build a Bot Tutorial](https://playground.pandorabots.com/en/tutorial/) to get started. Also required is the `user_key ` found on your application’s page in the [Developer Portal](https://developer.pandorabots.com/). For more information on using the API, see our post on [Basic Bot Deployment](http://blog.pandorabots.com/basic-bot-deployment/).
+[Twilio](https://www.twilio.com/) is a messaging and voice API that allows you to connect applications to a real phone number, and exchange data with that phone number via speech or text. To get started, you'll need an account and an SMS-enabled phone number (you should get one free number upon signing up).
 
-The first step is creating an account with Twilio. A trial account is free and will be sufficient to complete this tutorial. Once you have your twilio phone number we can move on to setting up your development environment.
+Once you've completed the registration, click the "Show API Credentials" in the upper right corner of the page. Take note of the Authentication Token, as you'll need it to
+validate requests from Twilio to your application.
 
-## Setting up your Local Dev Environment
+> If you have signed up for the free plan on Twilio, make sure to read about [its limitations](https://www.twilio.com/help/faq/twilio-basics/how-does-twilios-free-trial-work) before continuing. At the time of this post, you have
+to verify phone numbers individually before you can send SMS to your Twilio number.
 
-We will be creating a Python web application using the [Flask](http://flask.pocoo.org/) microframework for Python, along with the [Pandorabots Python SDK](https://github.com/pandorabots/pb-python). You will need to have the following tools installed:
+## Deploy to Heroku
 
-* Python
-* Flask
-* PbPython
-* the twilio-python library
+Twilio operates on a "webhook" model, which means that every time a text message is sent to your phone number, an HTTP request is sent to a URL of your choosing. Your application will live at this URL, and will take incoming messages from Twilio and pass them to the Pandorabots API for processing. When the API responds, your application can send a text message back to the sender by responding to the webhook's request.
 
-## Installing Python
+![](/content/images/2016/02/webhook.png)
 
-Linux and Mac machines come pre-installed with Python. To see if you have Python, simply open a terminal on your computer and type:
+We're going to use [Heroku](https://www.heroku.com/) to host our web app. Make sure you've signed up for an account (the free plan should be fine for this project). The code for your app is available in the main [Github repo](https://github.com/pandorabots/pandorabots-twilio-app). All you have to do is click the purple deploy button, enter in your API credentials and configuration, and Heroku will take care of building and launching everything for you.
 
-    username% python
+## Configuring the webhook
 
-This should start the python interactive environment. If you do not have Python installed on your machine, follow the setup instructions on the [official Python page](https://docs.python.org/2/using/index.html).
+You'll now need to return to Twilio to give it the URL of your application running on Heroku. Your URL is **http://your-app-name.herokuapp.com**, where App Name is the name that you chose when deploying the Heroku app (if you didn't choose one, scroll to the top of the deployment page to see the name Heroku automatically generated for you).
 
-## Installing Flask, PbPython, and twilio
+ Navigate to the "Phone Numbers" tab in your Twilio dash, and select your SMS-enabled
+ number by clicking it on the left, and then clicking "Detailed View" in the modal
+ that appears. Scroll to the "Messaging" section at the bottom of the page.
 
-Flask is a simple server written in Python. PbPython is the free Pandorabots SDK for Python. Twilio is the python helper library for the twilio api. We will install the three libraries using pip from the command line:
+![](/content/images/2016/02/Screen-Shot-2016-02-29-at-3-00-25-PM.png)
 
-    username% pip install Flask
-    username% pip install PbPython
-    username% pip install twilio
+There are a few different ways to configure your messaging app on Twilio, but for this project we'll be using TwiML, a markup language devised by Twilio that helps you to create interactive voice and messaging appications.
 
-For more information on installing pip, please see the documentation [here](https://pip.pypa.io/en/latest/installing.html).
+Make sure you've selected "Configure with TwiML App," and select "Create a new TwiML App".
 
-## Creating your Flask App
+![](/content/images/2016/02/Screen-Shot-2016-02-29-at-3-01-58-PM.png)
 
-Your flask application will be composed of one file. In your desired home folder, create a file named **run.py** and add the following code *(be sure to include your credentials where indicated)*:
+Give you TwiML App a name (this can be anything), and enter your Heroku URL in the "Request URL" field under "Messaging." Once you've saved and returned to the previous screen, make sure your TwiML app is selected to handle messaging for the phone number.
 
-    from flask import Flask, request, redirect
-    import twilio.twiml
-    from pb_py import main as api
-
-    host = 'INSERT THE NAME OF THE SERVER YOUR BOT IS HOSTED ON HERE'
-    user_key = 'YOUR PANDORABOTS USER_KEY'
-    app_id = 'YOUR APPLICATION'S ID'
-    botname = 'YOUR BOT'S NAME HERE'
-
-    app = Flask(__name__)
-
-    @app.route("/", methods=['GET','POST'])
-    def bot_talk():
-        """Respond to incoming texts with a text from your bot"""
-        request_message = request.values.get('Body',  'twiliotest')
-        bot_response = api.talk(user_key, app_id, host, botname, request_message)["response"]
-        resp = twilio.twiml.Response()
-        resp.message(bot_response)
-        return str(resp)
-
-    if __name__ == "__main__":
-        app.run(debug=True)
-
-Add the following category to your bot to test that your flask server is functioning correctly:
-
-    <category>
-	    <pattern>TWILIOTEST</pattern>
-	    <template>Hello World!</template>
-    </category>
-
-Note: the pattern of our category corresponds to the string at the end of line 17 in **run.py**.
-
-To test our flask server save **run.py**, and type at the command line:
-
-    username$ python run.py
-    * Running on http://127.0.0.1:5000/
-
-Navigate to http://localhost:5000 in your browser. You should see your “Hello World!” message displayed.
-
-## Connecting your server to the internet
-
-Now that we have successfully created our flask server on our local machine, it’s time to deploy it to a public web address so that Twilio will be able to find it. Here are some tutorials that may help you with this task *(for the number above we used Heroku)*:
-
-* [ngrok - Test your app without a web server](https://ngrok.com/)
-* [Getting Started with Flask on Heroku](http://devcenter.heroku.com/articles/python)
-* [How to deploy a Flask app on Webfaction](http://flask.pocoo.org/snippets/65/)
-* [Deploying Flask on Apache, FastCGI, or uWSGI](http://flask.pocoo.org/docs/deploying/)
-* [Deploying a Flask app on Dotcloud](http://flask.pocoo.org/snippets/48/)
-
-Once you have your server deployed, the last step is to connect it to Twilio. Go to the [Numbers tab](https://www.twilio.com/user/account/phone-numbers/incoming) on your Twilio Account Page and click on your number. Add the public web address that you generated *(using one of the services listed above)* to the **Request URL** text box under the Messaging header. Save your settings and text your twilio number. Your bot will text back!
-
-## Next Steps
-
-You have just created a simple texting application for your bot. Congratulations! However, this app represents just the beginning of what you can accomplish. Using the Pandorabots and Twilio APIs one can do much more, such as respond to texts with images, or conduct persistent conversations with users all around the world. If you want to take your application to the next level, we recommend that you familiarize yourself with the documentation on [PbPython](https://github.com/pandorabots/pb-python) and [Twilio](https://www.twilio.com/docs). We are excited to see what you can create!
+At this point, you should be able to send messages to your Pandorabot by texting the Twilio number. We've taken care of the implementation for you, including keeping track of your user's phone numbers so that the bot can remember information about them for later reference in conversation.
