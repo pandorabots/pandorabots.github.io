@@ -25,7 +25,7 @@ to verify phone numbers individually before you can send SMS to your Twilio numb
 
 Twilio operates on a "webhook" model, which means that every time a text message is sent to your phone number, an HTTP request is sent to a URL of your choosing. Your application will live at this URL, and will take incoming messages from Twilio and pass them to the Pandorabots API for processing. When the API responds, your application can send a text message back to the sender by responding to the webhook's request.
 
-![](/content/images/2016/02/webhook.png)
+![](/images/webhook.png)
 
 We're going to use [Heroku](https://www.heroku.com/) to host our web app. Make sure you've signed up for an account (the free plan should be fine for this project). The code for your app is available in the main [Github repo](https://github.com/pandorabots/pandorabots-twilio-app). All you have to do is click the purple deploy button, enter in your API credentials and configuration, and Heroku will take care of building and launching everything for you.
 
@@ -37,13 +37,13 @@ You'll now need to return to Twilio to give it the URL of your application runni
  number by clicking it on the left, and then clicking "Detailed View" in the modal
  that appears. Scroll to the "Messaging" section at the bottom of the page.
 
-![](/content/images/2016/02/Screen-Shot-2016-02-29-at-3-00-25-PM.png)
+![](/images/messaging.png)
 
 There are a few different ways to configure your messaging app on Twilio, but for this project we'll be using TwiML, a markup language devised by Twilio that helps you to create interactive voice and messaging appications.
 
 Make sure you've selected "Configure with TwiML App," and select "Create a new TwiML App".
 
-![](/content/images/2016/02/Screen-Shot-2016-02-29-at-3-01-58-PM.png)
+![](/images/create_twiml_app.png)
 
 Give you TwiML App a name (this can be anything), and enter your Heroku URL in the "Request URL" field under "Messaging." Once you've saved and returned to the previous screen, make sure your TwiML app is selected to handle messaging for the phone number.
 
