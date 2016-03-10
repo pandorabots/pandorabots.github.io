@@ -15,8 +15,9 @@ your personal Telegram account. The BotFather is a bot user that guides you
 through the process of naming your bot, and retrieving your API token.
 
 Once you've gotten your API token and gathered your Pandorabots API credentials,
-just click the "Deploy to Heroku" button found in the repository's read me file.
-Enter your information to configure the application and click "Deploy for Free".
+just click the "Deploy to Heroku" button found in the repository's README.md
+file. Enter your information to configure the application and click "Deploy for
+Free".
 
 When the application has launched, your Pandorabot will be for chat to Telegram
 users!
