@@ -1,5 +1,5 @@
 ---
-layout: tutorials
+layout: default
 title: Using Rosie
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: articles
+layout: default
 title: Using Data Dynamically
 ---
 

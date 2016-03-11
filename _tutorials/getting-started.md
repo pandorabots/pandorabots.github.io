@@ -1,11 +1,11 @@
 ---
-layout: tutorials
+layout: default
 title: Getting started
 ---
 
 # Getting started with chatbot development
 
-If you've found this tutorial, you hopefully know what a chatbot is and what 
+If you've found this tutorial, you hopefully know what a chatbot is and what
 Pandorabots can do to help you build and deploy one.
 
 For those of you who don't know, a chatbot is an application that can have a

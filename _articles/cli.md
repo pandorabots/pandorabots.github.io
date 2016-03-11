@@ -1,5 +1,5 @@
 ---
-layout: articles
+layout: default
 title: The Pandorabots CLI
 ---
 

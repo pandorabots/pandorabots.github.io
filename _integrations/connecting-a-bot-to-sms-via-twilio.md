@@ -1,5 +1,5 @@
 ---
-layout: integrations
+layout: default
 title: Twilio
 ---
 
