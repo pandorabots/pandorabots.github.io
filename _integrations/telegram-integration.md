@@ -1,5 +1,5 @@
 ---
-layout: integrations
+layout: default
 title: Telegram
 ---
 
@@ -19,5 +19,5 @@ just click the "Deploy to Heroku" button found in the repository's README.md
 file. Enter your information to configure the application and click "Deploy for
 Free".
 
-When the application has launched, your Pandorabot will be available for chat to 
+When the application has launched, your Pandorabot will be available for chat to
 Telegram users!

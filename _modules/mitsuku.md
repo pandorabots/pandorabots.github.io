@@ -1,5 +1,5 @@
 ---
-layout: modules
+layout: default
 title: Mitsuku
 ---
 

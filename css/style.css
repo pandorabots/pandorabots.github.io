@@ -1,19 +1,23 @@
-h1, h2, h3, h4 {
-  margin-top: 0px;
-}
-
-img {
-  width: 100%;
-}
-
+/* General */
 body {
   font-family: 'Open Sans', sans-serif;
   padding-top: 70px;
 }
 
+h1, h2, h3, h4 {
+  margin-top: 0px;
+}
+
+/* Use to style the logo */
 .brand {
   font-family: 'Comfortaa', cursive;
   font-size: 36px;
+}
+
+/* Custom styles for homepage */
+
+.lead {
+  font-size: 20px;
 }
 
 .tile {
@@ -50,16 +54,4 @@ body {
 .tile-link {
   display: block;
   height: 100%;
-}
-
-.site-sidebar h4 {
-  margin-top: 0px;
-}
-
-.attribution {
-  float: right;
-}
-
-.lead {
-  font-size: 20px;
 }
