@@ -10,6 +10,11 @@ $(document).ready(function() {
       $('#tutorialsCollapse').collapse('toggle');
   });
 
+  $('#deploymentsCollapseIcon').click(function() {
+      $('#deploymentsCollapseIcon').find('i').toggleClass('fa-angle-right fa-angle-down');
+      $('#deploymentsCollapse').collapse('toggle');
+  });
+
   $('#integrationsCollapseIcon').click(function() {
       $('#integrationsCollapseIcon').find('i').toggleClass('fa-angle-right fa-angle-down');
       $('#integrationsCollapse').collapse('toggle');

@@ -21,6 +21,15 @@
     </ul>
   </div>
 
+  <h4 id="deploymentsCollapseIcon" style="cursor: pointer;">Deployments <i class="fa fa-angle-down"></i></h4>
+  <div class="collapse in" id="deploymentsCollapse">
+    <ul class="list-unstyled">
+      {% for element in site.deployments %}
+      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
   <h4 id="integrationsCollapseIcon" style="cursor: pointer;">Integrations <i class="fa fa-angle-down"></i></h4>
   <div class="collapse in" id="integrationsCollapse">
     <ul class="list-unstyled">
