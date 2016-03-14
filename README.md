@@ -34,11 +34,8 @@ our content ordered by date published.
 
 Jekyll collections are stored in folders that have the name of the collection,
 plus an underscore prefix. Inside, create a markdown file (.md) for your new
-piece of content. So for a new "article":
-
-```
-$ cd _articles && touch my-article.md
-```
+piece of content. So for a new "article", go into the _articles directory and
+create a file called "my-article.md".
 
 This will create a new page accessible at
 http://pandorabots.github.io/articles/my-article (the title of the file
