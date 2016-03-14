@@ -25,6 +25,15 @@ This will open the Jekyll development server at
 [localhost:4000](http://localhost:4000). It will also watch your files, so that
 you don't have to rebuild/restart every time you make a change.
 
+> Tip: if you aren't up to date with the remote repository, run `git pull` to
+bring down any changes that you don't yet have. If you don't have any local
+changes you want to integrate, you can just clone the repository as shown above.
+
+## Pages
+
+The docs site only has 2 pages (besides all the content pages) - these are generated
+from index.html and about.md. Any changes to the front page should be made in index.html.
+
 ## Adding content
 
 The site's content is driven by Jekyll collections, which allow you to group
@@ -34,11 +43,8 @@ our content ordered by date published.
 
 Jekyll collections are stored in folders that have the name of the collection,
 plus an underscore prefix. Inside, create a markdown file (.md) for your new
-piece of content. So for a new "article":
-
-```
-$ cd _articles && touch my-article.md
-```
+piece of content. So for a new "article", go into the _articles directory and
+create a file called "my-article.md".
 
 This will create a new page accessible at
 http://pandorabots.github.io/articles/my-article (the title of the file
@@ -60,7 +66,7 @@ ___
 Here is my article!
 ```
 
-The title will appear as a top level header on the page itself, and the layout
+The title will appear in the sidebar index, and the layout
 will determine how the header, footer, sidebar etc. are laid out. **Use
 "default" as the layout for all content except for AIML references for which you
 should use the "aiml" layout.**
@@ -75,6 +81,10 @@ to create a new collection, and add a folder with the name of your
 collection prefixed with an underscore.
 
 See _includes/sidebar.html for examples of how to add a collection to the navigation.
+
+Finally, you'll want to copy-paste one of the click handlers in js/app.js to handle the collapse of your
+new collection in the sidebar. Go to the bottom, duplicate one of the click handlers, and replace all instances of the old
+collection's name with your new collection.
 
 ## CSS
 
