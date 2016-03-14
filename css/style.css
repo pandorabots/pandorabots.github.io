@@ -8,6 +8,10 @@ h1, h2, h3, h4 {
   margin-top: 0px;
 }
 
+.page-content img {
+  width: 100%;
+}
+
 /* Use to style the logo */
 .brand {
   font-family: 'Comfortaa', cursive;
