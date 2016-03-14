@@ -3,7 +3,7 @@ layout: default
 title: Twilio
 ---
 
-# Connecting a chatbot to Twilio
+# Connecting a Chatbot to Twilio
 
 We've had a lot of interest recently from users wishing to connect their Pandorabot to messaging services like Twilio. In today's post, we'll take a look at how the Twilio platform works with apps, and how it can play with the Pandorabots API.
 
