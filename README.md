@@ -60,7 +60,7 @@ ___
 Here is my article!
 ```
 
-The title will appear as a top level header on the page itself, and the layout
+The title will appear in the sidebar index, and the layout
 will determine how the header, footer, sidebar etc. are laid out. **Use
 "default" as the layout for all content except for AIML references for which you
 should use the "aiml" layout.**
@@ -75,6 +75,10 @@ to create a new collection, and add a folder with the name of your
 collection prefixed with an underscore.
 
 See _includes/sidebar.html for examples of how to add a collection to the navigation.
+
+Finally, you'll want to copy-paste one of the click handlers in js/app.js to handle the collapse of your
+new collection in the sidebar. Go to the bottom, duplicate one of the click handlers, and replace all instances of the old
+collection's name with your new collection.
 
 ## CSS
 
