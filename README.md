@@ -29,6 +29,11 @@ you don't have to rebuild/restart every time you make a change.
 bring down any changes that you don't yet have. If you don't have any local
 changes you want to integrate, you can just clone the repository as shown above.
 
+## Pages
+
+The docs site only has 2 pages (besides all the content pages) - these are generated
+from index.html and about.md. Any changes to the front page should be made in index.html.
+
 ## Adding content
 
 The site's content is driven by Jekyll collections, which allow you to group
