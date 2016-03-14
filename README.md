@@ -25,6 +25,10 @@ This will open the Jekyll development server at
 [localhost:4000](http://localhost:4000). It will also watch your files, so that
 you don't have to rebuild/restart every time you make a change.
 
+> Tip: if you aren't up to date with the remote repository, run `git pull` to
+bring down any changes that you don't yet have. If you don't have any local
+changes you want to integrate, you can just clone the repository as shown above.
+
 ## Adding content
 
 The site's content is driven by Jekyll collections, which allow you to group
