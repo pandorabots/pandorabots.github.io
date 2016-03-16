@@ -12,10 +12,19 @@
     </ul>
   </div>
 
-  <h4 id="tutorialsCollapseIcon" style="cursor: pointer;">Tutorials <i class="fa fa-angle-down"></i></h4>
-  <div class="collapse in" id="tutorialsCollapse">
+  <h4 id="articlesCollapseIcon" style="cursor: pointer;">Articles <i class="fa fa-angle-down"></i></h4>
+  <div class="collapse in" id="articlesCollapse">
     <ul class="list-unstyled">
-      {% for element in site.tutorials %}
+      {% for element in site.articles %}
+      <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <h4 id="botsCollapseIcon" style="cursor: pointer;">Bot Modules <i class="fa fa-angle-down"></i></h4>
+  <div class="collapse in" id="botsCollapse">
+    <ul class="list-unstyled">
+      {% for element in site.modules %}
       <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
       {% endfor %}
     </ul>
@@ -39,22 +48,23 @@
     </ul>
   </div>
 
-  <h4 id="articlesCollapseIcon" style="cursor: pointer;">Articles <i class="fa fa-angle-down"></i></h4>
-  <div class="collapse in" id="articlesCollapse">
+  <h4 id="librariesCollapseIcon" style="cursor: pointer;">Libraries <i class="fa fa-angle-down"></i></h4>
+  <div class="collapse in" id="librariesCollapse">
     <ul class="list-unstyled">
-      {% for element in site.articles %}
+      {% for element in site.libraries %}
       <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
       {% endfor %}
     </ul>
   </div>
 
-  <h4 id="botsCollapseIcon" style="cursor: pointer;">Bot Modules <i class="fa fa-angle-down"></i></h4>
-  <div class="collapse in" id="botsCollapse">
+  <h4 id="tutorialsCollapseIcon" style="cursor: pointer;">Tutorials <i class="fa fa-angle-down"></i></h4>
+  <div class="collapse in" id="tutorialsCollapse">
     <ul class="list-unstyled">
-      {% for element in site.modules %}
+      {% for element in site.tutorials %}
       <li><a href="{{ site.baseurl }}{{ element.url }}">{{ element.title }}</a></li>
       {% endfor %}
     </ul>
   </div>
+
 
 </div>

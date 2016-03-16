@@ -78,7 +78,7 @@ should use the "aiml" layout.**
 
 Open up _config.yml to see your Jekyll site configuration. At the bottom is the configuration for collections - simply follow the format
 to create a new collection, and add a folder with the name of your
-collection prefixed with an underscore.
+collection prefixed with an underscore. Note: you will need to restart the jekyll server after editing this file when editing locally.
 
 See _includes/sidebar.html for examples of how to add a collection to the navigation.
 
