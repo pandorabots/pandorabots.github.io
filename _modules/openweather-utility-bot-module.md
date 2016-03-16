@@ -41,32 +41,32 @@ For example, try adding the following parameters to your bot properties file:
 
 <table class="table table-striped table-bordered">
 <tr><th>Query Description</th><th>Query Syntax</th></tr>
-<tr><td>general weather condition (icon)</td><td>WEATHER *{location}*</td><td></td></tr>
-<tr><td>temperature (F, default or C, or Kelvin)</td><td>TEMP *{location}*</td></tr>
-<tr><td>cloudiness</td><td>CLOUDS *{location}*</td></tr>
-<tr><td>time of sunrise (UTC)</td><td>SUNRISE *{location}*</td></tr>
-<tr><td>time of sunset (UTC)</td><td>SUNSET *{location}*</td></tr>
-<tr><td>wind direction (cardinal)</td><td>WINDDIR *{location}*</td></tr>
-<tr><td>wind speed</td><td>WINDSPEED *{location}*</td></tr>
-<tr><td>atmospheric pressure (hPa)</td><td>PRESSURE *{location}*</td></tr>
-<tr><td>humidity (%)</td><td>HUMIDITY *{location}*</td></tr>
-<tr><td>visibility (feet, default or metric: meters)</td><td>VISIBILITY *{location}*</td></tr>
+<tr><td>general weather condition (icon)</td><td>WEATHER <i>{location}</i></td></tr>
+<tr><td>temperature (F, default or C, or Kelvin)</td><td>TEMP <i>{location}</i></td></tr>
+<tr><td>cloudiness</td><td>CLOUDS <i>{location}</i></td></tr>
+<tr><td>time of sunrise (UTC)</td><td>SUNRISE <i>{location}</i></td></tr>
+<tr><td>time of sunset (UTC)</td><td>SUNSET <i>{location}</i></td></tr>
+<tr><td>wind direction (cardinal)</td><td>WINDDIR <i>{location}</i></td></tr>
+<tr><td>wind speed</td><td>WINDSPEED <i>{location}</i></td></tr>
+<tr><td>atmospheric pressure (hPa)</td><td>PRESSURE <i>{location}</i></td></tr>
+<tr><td>humidity (%)</td><td>HUMIDITY <i>{location}</i></td></tr>
+<tr><td>visibility (feet, default or metric: meters)</td><td>VISIBILITY <i>{location}</i></td></tr>
 <tr><td></td><td></td></tr>
 </table>
 
 #### Interaction Examples ####
 
-**Input:** xopenweather weather mumbai
-**Output:** Sky is Clear
+**Input:** xopenweather weather mumbai  
+**Output:** Sky is Clear  
 
-**Input:** xopenweather temp beijing
-**Output:** 39.18
+**Input:** xopenweather temp beijing  
+**Output:** 39.18    
 
-**Input:** XOPENWEATHER WINDDIR DEATH VALLEY
-**Output:** SE
+**Input:** XOPENWEATHER WINDDIR DEATH VALLEY  
+**Output:** SE  
 
-**Input:** XOPENWEATHER Humidity Miami FL
-**Output:** 65
+**Input:** XOPENWEATHER Humidity Miami FL  
+**Output:** 65  
 
 
 ### Guidelines ###
@@ -110,16 +110,16 @@ or if you want to make a change to units format for a single query:
 ##### Interaction Examples: #####
 *NOTE: these examples below assumes  you have standard normal.substitution file that processes contractions like "what's"*
 
-**Input:** What's the current weather in Boston?
-**Output:** Multiple Candidates. Please provide more information to narrow down
+**Input:** What's the current weather in Boston?  
+**Output:** Multiple Candidates. Please provide more information to narrow down  
 
-**Input:** What's the current weather in Boston, MA
-**Output:** scattered clouds
+**Input:** What's the current weather in Boston, MA  
+**Output:** scattered clouds  
 
-**Input:** What's it like in Tokyo?
-**Output:** clear sky
+**Input:** What's it like in Tokyo?  
+**Output:** clear sky  
 
-**Input:** What's the metric temp in Beijing?
-**Output:** 3.99
+**Input:** What's the metric temp in Beijing?  
+**Output:** 3.99  
 
 *Last Updated: 3/16/2016*
