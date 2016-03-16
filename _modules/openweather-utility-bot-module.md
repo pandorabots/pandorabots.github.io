@@ -28,7 +28,7 @@ For example, try adding the following parameters to your bot properties file:
 
 ### Utility Bot Usage ###
 
-**CURRENT  *{query}* *{location}* OWMAPPID *{appid}* UNITSFORMAT {metric | kelvin | imperial}**
+CURRENT  *{query}* *{location}* OWMAPPID *{appid}* UNITSFORMAT {metric | kelvin | imperial}
 
 ### Example Canonical Category ###
 
