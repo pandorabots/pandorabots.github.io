@@ -13,6 +13,10 @@ github_username:  pandorabots
 # Build settings
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 exclude:
   - "bower_components"
   - "bower.json"
