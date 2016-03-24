@@ -35,4 +35,9 @@ $(document).ready(function() {
       $('#articlesCollapse').collapse('toggle');
   });
 
+  $('#librariesCollapseIcon').click(function() {
+      $('#librariesCollapseIcon').find('i').toggleClass('fa-angle-right fa-angle-down');
+      $('#librariesCollapse').collapse('toggle');
+  });
+
 });
