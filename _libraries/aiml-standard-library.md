@@ -28,7 +28,7 @@ In Syntax column, replace {} with actual values. See Example column for input/ou
 <tr>
     <td>String</td><td>XSTRING {input}</td>
     <td>Returns the input as a normalized string.</td>
-    <td><b>INPUT:</b> XSTRING yum@goodeats.com<br/><b>OUTPUT:</b> yum at goodeats dot com<br/><br/><b>INPUT:</b> XNUMBER Hello there.<br/><b>OUTPUT:</b> Hello there</td>
+    <td><b>INPUT:</b> XSTRING yum@goodeats.com<br/><b>OUTPUT:</b> yum at goodeats dot com<br/><br/><b>INPUT:</b> XSTRING Hello there.<br/><b>OUTPUT:</b> Hello there</td>
 </tr>
 <tr>
     <td>True if True</td><td>XISTRUE {input}</td><td>Returns TRUE if the input string is true.</td>    <td><b>INPUT:</b> XISTRUE true<br/><b>OUTPUT:</b> TRUE<br/><br/><b>INPUT:</b> XISTRUE 6<br/><b>OUTPUT:</b> FALSE</td>
