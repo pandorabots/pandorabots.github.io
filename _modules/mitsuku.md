@@ -62,11 +62,13 @@ You can override the Mitsuku Module’s name by wrapping the <sraix> element des
       <template><srai>XMITSUKUMODULE XRESPONSE <denormalize><sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix></denormalize></srai></template>
     </category>
 
-Then, create a file called denormal.substitutions, and include the following key-value pair as a substitution (use your intended name as second item):
+Then, create a file called denormal.substitutions, and include the following key-value pair as a substitution (use your intended name as the second item):
 
     [["Mitsuku", "Alice"]]
 
-Now, any time the module returns some text that contains the word Mitsuku, the denormalize tag will replace the word with the name you specified.
+Now, any time the module returns some text that contains the word Mitsuku, the denormalize tag will replace the word with the name you specified. 
+
+Please note that while you can override her name in this manner, the Mitsuku personality is not changeable. She will continue to be a young woman from the UK with a sassy personality regardless of the name change! 
 
 ## Custom response handling
 
