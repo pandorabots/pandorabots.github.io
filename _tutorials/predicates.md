@@ -1,4 +1,4 @@
-# Predicates 101: Customizing your bot conversation per end-user
+# Predicates 101
 
 This tutorial will help you understand how to customize your bot's conversation for each of your end-users.
 
