@@ -1,4 +1,9 @@
-# Predicates 101
+---
+layout: default
+title: Predicates 101
+---
+
+# Predicates 101: Customize your bot's conversation
 
 This tutorial will help you understand how to customize your bot's conversation for each of your end-users.
 
