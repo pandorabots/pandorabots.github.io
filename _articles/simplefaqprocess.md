@@ -1,8 +1,8 @@
 # Steps for developing a simple FAQ chatbot in AIML
 
-A Frequently Asked Questions (FAQ) chatbot is a great use case for a Pandorabot, and connecting it to a messaging platform or to your website. We've come up with an approach to build a quick FAQ chatbot. The purpose of this tutorial is to step you through the thought process for a limited set of FAQs.
+A Frequently Asked Questions (FAQ) chatbot is a great use case for a Pandorabot, connecting it to a messaging platform or to your website. We've come up with an approach to build a quick FAQ chatbot. The purpose of this tutorial is to step you through the thought process for a limited set of FAQs.
 
-This process assumes you understand basic AIML terminology such as [categories](http://pandorabots.github.io/aiml/category/), symbolic reductions (NEED A KNOWLEDGE ARTICLE LINK HERE, info from alicebot.org can be adapted] and wildcards [NEED A KNOWLEDGE ARTICLE LINK HERE, info exists on Playground tutorial]
+This process assumes you understand basic AIML terminology such as [categories](http://pandorabots.github.io/aiml/category/), symbolic reductions (http://pandorabots.github.io/aiml/srai/)] and wildcards [NEED A KNOWLEDGE ARTICLE LINK HERE, info exists on Playground tutorial]
 
 ## Step 1: Gather your list of questions and answers
 
@@ -17,12 +17,12 @@ If you have chat or inquiry history with your customers, you might have a list o
 * I'm having problems signing up
 
 Example answer:
-* Go to www.fabcompany.com/services and click the SIGN UP button in the middle of the page.
+* Go to fabcompany.com/services and click the SIGN UP button in the middle of the page.
 
 Make sure that all the questions you've listed actually map to the same answer. For instance, you might want to provide a different answer to "I'm having problems signing up", such as "Please contact our support staff at XXX-XXX-XXXX". 
 
 
-*Note*: using a chatbot to solicit more information from your customer to identify a problem is a different chatbot use case [add link here]. These approaches can be combined into a single Pandorabots though!
+*Note*: using a chatbot to solicit more information from your customer to identify a problem is a different chatbot use case [use pizzabot pattern article here]. These approaches can be combined into a single Pandorabots though!
 
 
 ## Step 2: Develop Canonical Forms
