@@ -49,8 +49,8 @@ In step 1, the patterns with "_" match first based on AIML 2.0 wildcard prioriti
 Whatever matches either wild-card symbol becomes the value of <star/>.
 
 
-<table>
-   <tr><th>Step</th><th>Normalized Input</th><th>Matching Pattern</th><th>Template</th><th>Response</th></tr>
+<table class="table table-striped table-bordered table-condensed">
+    <tr><th>Step</th><th>Normalized Input</th><th>Matching Pattern</th><th>Template</th><th>Response</th></tr>
     <tr><td>1</td><td>YOU CAN SAY THAT AGAIN BUDDY</td><td>_ &lt;bot name="name" /&gt;</td><td>&lt;sr /&gt;</td><td></td></tr>
     <tr><td>2</td><td>YOU CAN SAY THAT AGAIN</td><td>_ AGAIN</td><td>Once more? &lt;sr /&gt;</td><td>Once more?</td></tr>
     <tr><td>3</td><td>YOU CAN SAY THAT</td><td>YOU CAN *</td><td>&lt;sr /&gt;</td><td>Once more?</td></tr>
