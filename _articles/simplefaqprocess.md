@@ -1,6 +1,6 @@
-# Approach to a simple FAQ chatbot in AIML
+# Developing a simple FAQ chatbot in AIML
 
-A Frequently Asked Questions (FAQ) chatbot connected to a messaging platform or to your website, is a great use case for a Pandorabot,. We've come up with an approach to build a quick FAQ chatbot. The purpose of this article is to step you through the thought process for a limited set of FAQs.
+A Frequently Asked Questions (FAQ) chatbot connected to a messaging platform or to your website, is a great use case for a Pandorabot. We've come up with an approach to build a quick FAQ chatbot. The purpose of this article is to step you through the thought process of this approach for a limited set of FAQs.
 
 This process assumes you understand basic AIML terminology such as [categories](http://pandorabots.github.io/aiml/category/), [symbolic reductions](http://pandorabots.github.io/aiml/srai/) and wildcards.
 
@@ -33,14 +33,14 @@ You can pick one question as your canonical form, and build the base category:
 
     <category>
       <pattern>HOW DO I SIGN UP</pattern>
-      <template>Go to www.fabcompany.com/service and click the SIGN UP button in the middle of the page.</template>
+      <template>Go to fabcompany.com/services and click the SIGN UP button in the middle of the page.</template>
     </category>
 
 Alternatively, we recommend using a naming convention with business name/department and type of question, such as FABSERVICESSIGNUP. 
 
     <category>
       <pattern>FABSERVICESSIGNUP</pattern>
-      <template>Go to www.fabcompany.com/services and click the SIGN UP button in the middle of the page.</template>
+      <template>Go to fabcompany.com/services and click the SIGN UP button in the middle of the page.</template>
     </category>
 
 
