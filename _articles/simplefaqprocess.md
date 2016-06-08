@@ -22,7 +22,7 @@ Example answer:
 Make sure that all the questions you've listed actually map to the same answer. For instance, you might want to provide a different answer to "I'm having problems signing up", such as "Please contact our support staff at XXX-XXX-XXXX". 
 
 
-*Note*: using a chatbot to solicit more information from your customer to identify a problem is a different chatbot use case [use pizzabot pattern article here]. These approaches can be combined into a single Pandorabots though!
+*Note*: using a chatbot to solicit more information from your customer to identify a problem is a different chatbot use case. These approaches can be combined into a single Pandorabots though!
 
 
 ## Step 2: Develop Canonical Forms
@@ -46,7 +46,10 @@ Alternatively, we recommend using a naming convention with business name/departm
 
 ## Step 3: Develop Symbolic Reductions
 
-There are several ways to develop Symbolic Reductions (the "many patterns, one reply" concept)
+There are several ways to develop Symbolic Reductions (the "many patterns, one reply" concept) as shown below. 
+
+*Note on pattern and normalization*:  
+Patterns must be stripped of punctuation and any other normalization that you have specified in your bot (i.e. normal.substitution file). For example, do not include "." (period) or "?" (question mark) and also if you have the substitution in your normal file, "don't" should be "DO NOT" in your pattern tags.
 
 ### Exact Match
 If you have a list from chat history, you can just keep adding each question as a symbolic reduction (using [srai](http://pandorabots.github.io/aiml/srai/) AIML tag).
