@@ -14,12 +14,12 @@ The most typical use case of the srai element is to "reduce" an input by removin
 
     <category>
     <pattern>HELLO GOOD DAY</pattern>
-    <template><srai>HI</template>
+    <template><srai>HI</srai></template>
     </category>
     
     <category>
     <pattern>BONJOUR</pattern>
-    <template><srai>HI</template>
+    <template><srai>HI</srai></template>
     </category>
     
     <category>
