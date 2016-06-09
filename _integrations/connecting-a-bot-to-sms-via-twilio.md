@@ -5,6 +5,8 @@ title: Twilio
 
 # Connecting a Chatbot to Twilio
 
+##### *NOTE: Due to current changes in Twilio API this tutorial is obsolete, although some concepts may still apply.*
+
 We've had a lot of interest recently from users wishing to connect their Pandorabot to messaging services like Twilio. In today's post, we'll take a look at how the Twilio platform works with apps, and how it can play with the Pandorabots API.
 
 And thanks to Heroku's awesome [app.json Schema](https://devcenter.heroku.com/articles/app-json-schema), we've also made it ridiculously easy to get your SMS-enabled chatbot up and running.
