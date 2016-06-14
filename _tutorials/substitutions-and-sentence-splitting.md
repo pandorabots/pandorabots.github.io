@@ -130,7 +130,7 @@ Output: Hello. Nice to meet you, Charles.
 First, update your bot property to add the semicolon to the "sentence-splitters" property
 In the Playground Editor:
 
-![](/content/images/2014/10/Screenshot-2014-10-14-at-5-27-26-PM-1.png)
+![]({{ site.baseurl }}/images/Screenshot-2014-10-14-at-5-27-26-PM-1.png)
 
 Or, if you are updating the file in a text editor before uploading, add it to the JSON list item for "sentence-splitters".
 
