@@ -9,8 +9,8 @@ One new feature that was introduced in AIML 2.0 is the substitution file. These 
 
 Substitution files look a lot like map files, but serve a different function. They look for defined sets of characters in text strings, and replace those sets of characters with new values. Depending on the substitution file, this transformation can either occur before the bot attempts to form a match with an input, or in the bot's response itself. Here's a basic example:
 
-Input: I am waiting for you.
-Output: You are waiting for me.
+Input: I am waiting for you.  
+Output: You are waiting for me.  
 
     <category>
     <pattern>I AM *</pattern>
@@ -26,8 +26,8 @@ Some of the substitutions that come preloaded with your bot have actually always
 
 This file contains substitutions between first and second person pronouns. The above example transforms the second person pronoun "you" to the first person pronoun "me". This also works in reverse:
 
-Input: You are waiting for me.
-Output: I am waiting for you.
+Input: You are waiting for me.  
+Output: I am waiting for you.  
 
     <category>
     <pattern>YOU ARE *</pattern>
@@ -38,8 +38,8 @@ Output: I am waiting for you.
 
 This file is similar to person.substitution, but contains a few transformations between first and third person pronouns. These are rarely used in bots like Alice 2.0 and Rosie, but may come in handy.
 
-Input: Give the password to me.
-Output: User has asked me to give the password to him or her.
+Input: Give the password to me.  
+Output: User has asked me to give the password to him or her.  
 
     <category>
     <pattern>GIVE THE * TO *</pattern>
@@ -72,14 +72,14 @@ Output: pandorabots dot com
 
 This simple category allows us to see the AIML preprocessor at work. The normalize.substitution file defines the key ".com" with the value "dot com" (the AIML interpreter was designed to ignore punctuation). By echoing the wildcard contents, we can see the "normalized" input string that matched the pattern. Try out some additional inputs to see other normalizations in action:
 
-Input: Say I can’t hear you.
-Output: I can not hear you
+Input: Say I can’t hear you.  
+Output: I can not hear you 
 
-Input: Say isn’t.
-Output: is not
+Input: Say isn’t.  
+Output: is not  
 
-Input: Say becasue.
-Output: because
+Input: Say becasue.  
+Output: because  
 
 You can see that this file was also designed to normalize contractions, as well as some commonly mistyped words. Expanding this file will greatly increase your bot’s ability to understand inputs even when typos are present!
 
@@ -114,8 +114,8 @@ We've recently changed our system to give more control to bot developers. This c
 
 If you want to change your bot to support different sentence splitters, you will need to perform a couple changes to your bot files. For example, let’s say you want to define the semicolon as a sentence splitter:
 
-Input: Hello; My name is Charles.
-Output: Hello. Nice to meet you, Charles.
+Input: Hello; My name is Charles.  
+Output: Hello. Nice to meet you, Charles.  
 
     <category>
     <pattern>Hello</pattern>
@@ -144,6 +144,6 @@ Or, if you are updating the file in a text editor before uploading, add it to th
 
 You will also need to update normal.substitution to reflect this addition. By default, normal.substitution replaces the semicolon with a single space. This substitution pair needs to be deleted in order for the semicolon to be identified as a sentence delimiter in our system.
 
-######Big Picture
+**Big Picture(**
 
 Substitutions are especially handy if you have connected your bot to messaging services or social media platforms (like [Twitter](http://blog.pandorabots.com/putting-your-pandorabot-on-twitter/)), where user inputs can often be colloquial or include things like emoticons, abbreviations, and hashtags. Luckily, using substitutions to transform inputs that include something like a #-->HASHTAG, you can code your bot to recognize all these things and more!
