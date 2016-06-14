@@ -144,6 +144,6 @@ Or, if you are updating the file in a text editor before uploading, add it to th
 
 You will also need to update normal.substitution to reflect this addition. By default, normal.substitution replaces the semicolon with a single space. This substitution pair needs to be deleted in order for the semicolon to be identified as a sentence delimiter in our system.
 
-**Big Picture(**
+**Big Picture**
 
 Substitutions are especially handy if you have connected your bot to messaging services or social media platforms (like [Twitter](http://blog.pandorabots.com/putting-your-pandorabot-on-twitter/)), where user inputs can often be colloquial or include things like emoticons, abbreviations, and hashtags. Luckily, using substitutions to transform inputs that include something like a #-->HASHTAG, you can code your bot to recognize all these things and more!
