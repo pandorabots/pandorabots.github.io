@@ -98,7 +98,7 @@ In order to save a different value per client, in your application, when you use
 
 If your bot is talking to random strangers that you want to be able to retain predicates only during an active conversation, but not long-term, you can create a random (but unique) value within your application that conforms to the `client_name parameter` format. For example, any number of 3-64 digits is a valid format so a random number generator starting at 100 could be a simple solution for your application. A random string generator could also work, as long as it conforms to the parameter format. 
 
-As long as the end-user is in an active conversation, all predicates that were set during the talk session are preserved and can be recalled. As soon as the end-user stops interacting with the bot for an extended idle period (typically 30-40 minutes), their predicates will be cleared from bot memory.
+As long as the end-user is in an active conversation, all predicates that were set during the chat are preserved and can be recalled. As soon as the end-user stops interacting with the bot for an extended idle period (typically 30-40 minutes), their predicates will be cleared from bot memory.
 
 
 ## Saving persistent predicates for clients using Anonymous Talk API
