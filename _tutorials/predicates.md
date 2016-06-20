@@ -94,7 +94,7 @@ For more about the AIML tags used in this tutorial, please see the following AIM
 ## Saving predicates per clients using talk API
 Now you have AIML code in your bot to set and retrieve predicates based on client (AKA end-user) talking to your bot. 
 
-In order to save a different value per client, in your application, when you use the [Talk to a Bot API](https://developer.pandorabots.com/docs#!/pandorabots_api_swagger_1_3/talkBot) you must provide a `client_name` parameter in the talk request that is unique to each client.
+In order to save a different value per client, in your application, when you use the [Talk to a Bot API](https://developer.pandorabots.com/docs#!/pandorabots_api_swagger_1_3/talkBot) you must provide a `client_name` parameter in the talk request that is unique to each client.  Without a valid `client_name` parameter, predicates will be associated to your Pandorabots app_id, causing unexpected responses. For example: User A says her name is Amy, User B then says his name is Ben. Then if both (or any) users ask what their name is, your bot will respond with the last predicate value saved, which would be Ben).
 
 If your bot is talking to random strangers that you want to be able to retain predicates only during an active conversation, but not long-term, you can create a random (but unique) value within your application that conforms to the `client_name parameter` format. For example, any number of 3-64 digits is a valid format so a random number generator starting at 100 could be a simple solution for your application. A random string generator could also work, as long as it conforms to the parameter format. 
 
