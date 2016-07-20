@@ -19,7 +19,7 @@ Imagine a user named "djf" with two bots, "olimpia" and "alice". You could forwa
     <!-- from bot djf/olimpia -->
     <category>
       <pattern>WHAT IS FOO</pattern>
-      <template><sraix bot="alice"><input/></sraix></template>
+      <template><sraix bot="djf/alice"><input/></sraix></template>
     </category>
 
     <!-- from bot djf/alice -->
