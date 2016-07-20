@@ -9,7 +9,7 @@ The *sraix element* allows a bot to call categories that exist within another bo
 
 #### Attributes
 
-`bot` (required)
+`bot` (required)  
 Specifies the bot to call out to, defined by the `botid`. On the Pandorabots Playground, the `botid` is equivalent to `username/botname`. On the Developer Portal, it is defined as `app_id/botname`.
 
 #### Usage
