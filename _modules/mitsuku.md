@@ -24,7 +24,7 @@ In order to integrate the Mitsuku Module with your bot, you’ll have to include
     <!-- mitsukumodule request handler from routes.aiml -->
     <category>
       <pattern>XMITSUKUMODULE *</pattern>
-      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix></srai></template>  
+      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix></srai></template> 
     </category>
 
     <!-- mitsukumodule response handlers from routes.aiml -->
@@ -52,7 +52,7 @@ You can target more specific inputs by using context and pattern-matching. For e
     </category>
     </topic>
 
-## Name override
+## Name override (OPTIONAL)
 
 You can override the Mitsuku Module’s name by wrapping the <sraix> element described above in the <denormalize> tag:
 
@@ -62,25 +62,28 @@ You can override the Mitsuku Module’s name by wrapping the <sraix> element des
       <template><srai>XMITSUKUMODULE XRESPONSE <denormalize><sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix></denormalize></srai></template>
     </category>
 
-Then, create a file called denormal.substitutions, and include the following key-value pair as a substitution (use your intended name as the second item):
+Then, modify the denormal.substitutions file to include the following key-value pair as a substitution (use your intended name as the second item):
 
-    [["Mitsuku", "Alice"]]
+    [
+    ["Mitsuku", "Alice"],
+    :
+    ]
 
 Now, any time the module returns some text that contains the word Mitsuku, the denormalize tag will replace the word with the name you specified. 
 
 Please note that while you can override her name in this manner, the Mitsuku personality is not changeable. She will continue to be a young woman from the UK with a sassy personality regardless of the name change! 
 
-## Custom response handling
+## Custom response handling (OPTIONAL)
 
-You also have the option to intercept a response from a module before it is returned to your user. This allows you to give your bot different behavior depending on what the module returns:
+You also have the option to intercept a response from Mitsuku module before it is returned to your end user. This allows you to give your bot different behavior depending on what the module returns:
 
-    <!-- “request handler” in routes.aiml (under the route category) -->
+    <!-- mitsukumodule request handler from routes.aiml -->
     <category>
       <pattern>XMITSUKUMODULE *</pattern>
-      <template><srai>XMITSUKUMODULE XRESPONSE <denormalize><sraix><bot><bot name="mitsukumodule"></bot><star/></sraix></denormalize></template>
+      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"></bot><star/></sraix></template>
     </category>
 
-You’ll notice that the `<sraix>` route to the Mitsuku Module is now wrapped in an `<srai>` tag. This allows you to redirect module’s response to another category in your bot, for additional processing before a response is returned to the user. We’ve prepended the string XMITSUKUMODULE to mark inputs that have been received by Mitsuku Module.
+From the initial routing AIML described above, you’ll notice that the `<sraix>` route to the Mitsuku Module is wrapped in an `<srai>` tag. This allows you to redirect module’s response to another category in your bot, for additional processing before a response is returned to the user. We’ve prepended the string XMITSUKUMODULE to mark inputs that have been received by Mitsuku Module.
 
     <!-- "response handler" in routes.aiml -->
     <category>
@@ -88,7 +91,7 @@ You’ll notice that the `<sraix>` route to the Mitsuku Module is now wrapped in
       <template><star/></template>
     </category>
 
-This category will now capture all responses returned by the module. You can write additional patterns beginning with XMITSUKUMODULE to capture certain responses. For example, to handle a recursion error gracefully:
+This category will now capture all responses returned by the module. You can then write additional patterns beginning with XMITSUKUMODULE to capture certain responses. For example, to handle a recursion error gracefully:
 
     <category>
       <pattern>XMITSUKUMODULE XRESPONSE TOO MUCH RECURSION IN AIML</pattern>
@@ -102,11 +105,11 @@ This category will now capture all responses returned by the module. You can wri
 
 ## Predicates
 
-For information on getting and setting predicates in your own bot, please take a look at our [blog post](http://blog.pandorabots.com/aiml-use-cases-part-1/) on the subject.
+For information on getting and setting predicates in your own bot, please take a look at our [tutorial](http://docs.pandorabots.com/tutorials/predicates/) on the subject.
 
 Predicates can be stored in either your own bot or in Mitsuku, however, the two bots will not have direct access to each other’s variables. This prevents a bot from “leaking” information about its user to other bots. All variables will be resolved locally in a bot before a string is passed to another bot via `<sraix>`.
 
-The Mitsuku Module contains a wealth of AIML that sets predicates during conversation, mostly regarding personal details about the end user (age, location, gender, etc.). You can issue the input “CLIENT PROPERTIES” to Mitsuku module to get client predicates it currently has stored.
+The Mitsuku Module contains a wealth of AIML that sets predicates during conversation, mostly regarding personal details about the end user (age, location, gender, etc.). You can issue the input “CLIENT PROPERTIES” to Mitsuku Module to get client predicates it currently has stored.
 
 ## Properties
 
