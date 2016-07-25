@@ -101,7 +101,9 @@ Note, that the $ symbol is not a wildcard. It is a marker that says "for this pa
 ## Visualizing Matching Priority
 
 All of the bot's AIML categories are loaded into a structure called the "Graphmaster." The order in which
-patterns take matching priority can be visualized in the Graphmaster, such as this internal representation:
+patterns take matching priority can be visualized in the Graphmaster:
+
+![](/images/Graphmaster.png)
 
 ## Multiple Wildcards
 
