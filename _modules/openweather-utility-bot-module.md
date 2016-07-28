@@ -19,7 +19,8 @@ When first creating your bot, a default bot properties file is automatically cre
 
 * Utility bot identifier - **utility/openweather**
 * OpenWeather API Key - you must sign up for a weather API key at [OpenWeatherMap.org](http://openweathermap.org/appid)
-* Units format - the OpenWeather utility bot supports units format: **imperial** (i.e. Fahrenheit, feet, etc), **metric** (Celsius, meters) or **kelvin**.
+* Units format - the OpenWeather utility bot supports units format: **imperial** (i.e. Fahrenheit, feet, etc), **metric** (Celsius, meters) or **kelvin**.  
+
 For example, try adding the following parameters to your bot properties file:  
 
     [  
