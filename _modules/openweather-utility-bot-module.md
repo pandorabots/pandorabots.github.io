@@ -15,28 +15,39 @@ Note: when using utility bot modules to access third party APIs, in addition to 
 
 ### Initial Setup in your Bot Properties ###
 
-We recommend creating bot properties to keep track of your specific values, such as
+When first creating your bot, a default bot properties file is automatically created. We recommend adding three bot properties to this file to keep track of your specific values needed to make use of the module:
 
 * Utility bot identifier - **utility/openweather**
 * OpenWeather API Key - you must sign up for a weather API key at [OpenWeatherMap.org](http://openweathermap.org/appid)
 * Units format - the OpenWeather utility bot supports units format: **imperial** (i.e. Fahrenheit, feet, etc), **metric** (Celsius, meters) or **kelvin**.
-For example, try adding the following parameters to your bot properties file:
+For example, try adding the following parameters to your bot properties file:  
 
-`["myweatherutilitybot","utility/openweather"],`
-`["myweatherapikey","{appid}"],`
-`["myunitsformat","imperial"],`
-
+    [  
+    ["myweatherutilitybot","utility/openweather"],   
+    ["myweatherapikey","{appid}"],  
+    ["myunitsformat","imperial"],  
+    :  
+    :  
+    
 ### Utility Bot Usage ###
 
 CURRENT  *{query}* *{location}* OWMAPPID *{appid}* UNITSFORMAT *{metric, kelvin, or imperial}*
 
 ### Example Canonical Category ###
+If you added your module parameters into your bot properties files:
 
     <category>
       <pattern>XOPENWEATHER *</pattern>
       <template><sraix><bot><bot name="myweatherutilitybot"/></bot>CURRENT <star/> OWMAPPID <bot name="myweatherapikey" /> UNITSFORMAT <bot name="myunitsformat" /></sraix></template>
     </category>
 
+Alternatively you can include the values directly into your category such as:
+
+    <category>
+       <pattern>XOPENWEATHER *</pattern>
+       <template><sraix bot="utility/openweather">CURRENT <star/> OWMAPPID {appid} UNITSFORMAT imperial</sraix></template>
+    </category>
+    
 ### Queries ###
 
 <table class="table table-striped table-bordered">
@@ -79,6 +90,7 @@ Open Weather utility bot may respond in unexpected ways, such as:
 * Ambiguous location: `Multiple Candidates. Please provide more information to narrow down`
 For example, San Diego will return this response, so you would need to include more information, e.g. San Diego, TX or San Diego CA
 * No information available for that query: `nil`
+* Missing / invalid utility bot: `SRAIXFAILED`  Please check to make sure you are providing the correct utility module bot name in your sraix category.
 
 ### Example Reductions: ###
 
@@ -122,4 +134,3 @@ or if you want to make a change to units format for a single query:
 **Input:** What's the metric temp in Beijing?  
 **Output:** 3.99  
 
-*Last Updated: 3/16/2016*
