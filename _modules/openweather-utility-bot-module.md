@@ -30,6 +30,8 @@ For example, try adding the following parameters to your bot properties file:
     :  
     :  
     
+NOTE: Replace `{appid}` with your weather API key received from OpenWeather.org.
+
 ### Utility Bot Usage ###
 
 CURRENT  *{query}* *{location}* OWMAPPID *{appid}* UNITSFORMAT *{metric, kelvin, or imperial}*
