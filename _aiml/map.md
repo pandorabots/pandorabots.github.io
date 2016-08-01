@@ -7,6 +7,15 @@ title: map
 
 The *map element* is used to reference a `.map` file, which attempts to match the map element's contents to one of its own properties, returning the property's value. Maps are data structures that provide key-value pairs.
 
+#### Built-in Maps
+
+Pandorabots have some built-in maps that are not visible in the list of bot files:
+
+    <map name="successor">     -- maps any number n to n+1
+    <map name="predecessor">   -- maps any number to n-1
+    <map name="plural">        -- (attempts to) find the plural form of a singular noun (English only).
+    <map name="singular">      -- (attempts to) find the singular forms of a plural noun (English only).
+    
 #### Attributes
 
 `name` (required)  
