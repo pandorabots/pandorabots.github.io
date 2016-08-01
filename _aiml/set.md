@@ -28,6 +28,13 @@ Imagine how many categories would be needed to cover every color in the spectrum
 
 Instead of giving each color its own category, we can create a set that contains all the colors, and write a single category that checks to see if the user's input contained one of those colors. This category will only be matched IF the user's input does, in fact, contain one of the colors in the set. Otherwise, the category will not be matched. The set functions like a wildcard. It captures one or more words found in the user's input.
 
+#### Built-in Sets
+
+Pandorabots have some build-in sets that are not visible in the list of bot files.
+
+    <set>number</set>     -- matches any natural number
+    
+    
 #### Usage
     <category>
     <pattern>IS <set>colors</set> A COLOR</pattern>
@@ -41,7 +48,10 @@ Instead of giving each color its own category, we can create a set that contains
     
 If the input contained a string not found in the set, then that pattern would not have formed a match. Because of this, we can provide a default answer using a * wildcard. The second category above matches if the input contains a string not found in the set.
 
-**NOTE:** Sets take precedence over * and ^ wildcards, but can be overridden by _ # and an exact word match. The input captured by the `<set>` tags can be eachoed using `<star/>`, just like a wildcard as shown in the usage example.  Set files are simple string array, such as:  [["red"],["orange"],["yellow"],["green"],["blue"],["indigo"]]
+**NOTE:** Sets take precedence over * and ^ wildcards, but can be overridden by _ # and an exact word match. The input captured by the `<set>` tags can be echoed using `<star/>`, just like a wildcard as shown in the usage example.  Set files are simple string array, such as:
+
+    [["red"],["orange"],["yellow"],["green"],["blue"],["indigo"]]
+
 
 ### SET USED IN TEMPLATE 
 
