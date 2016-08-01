@@ -5,11 +5,22 @@ title: that
 
 ### &lt;that&gt;
 
-The *that element* is an optional child of the category element that is used to establish the context of the pattern. If a category contains a that element, the pattern can only be matched if the last sentence of the bot's previous response matches the contents of `that`. In a sense, the that element binds a pattern to the immediate context of the conversation.
+The *that element* is an optional child of the category element that is used to establish the context of the pattern. The bot is able to remember the last sentence it has said, and is defined as the value of "that".
+
+If a category contains a *that element*, the pattern can only be matched if the last sentence of the bot's previous response matches the contents of `that`. In a sense, the *that element* binds a pattern to the immediate context of the conversation.
 
 This is very useful for contextualizing common, simple user inputs such as "yes" or "no."
 
-The *that element* follows all the rules of the pattern element: it may not contain punctuation, it may use wildcard symbols, it should be written in all caps, and it should expect pre-processing normalization.
+This allows you to have many duplicate patterns that, depending on the previous response, will trigger different templates.
+
+The *that element* follows all the rules of the pattern element: The previous sentence given by your bot will be stripped of punctuation when read by a category referencing it with `<that>` tags. The new category will also ignore differences in capitalization/non-capitalized letters, and will expect any normalization you have specified in normal.substitution file.
+
+For these reasons, we recommend you write the contents of the `<that>` tags like patterns: no punctuation, all capital letters, and normalized. If you are having trouble getting your `<that>` to work, usually it is one of those three items being amiss in your `<that>` tag.
+
+Also note:  
+* `<that>` tags can contain wildcards!
+* Values for *that* variables are only within the scope of an active conversation. After some amount of idle time, the bot flushes context from memory.
+
 
 #### Usage
 
