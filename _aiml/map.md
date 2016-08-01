@@ -27,3 +27,17 @@ This example uses [state2capital.map](https://github.com/pandorabots/rosie/blob/
 **Output:** Sacramento is the capital of California
 
 This category shows how maps and sets can be used in conjunction with each other to create "facts" in your bot's knowledge base. The `state.set` file is called in the pattern to verify that the user's input actually contained a state. If the wildcard contents does exist in the set file, it is then passed in as an input to `state2capital.map`. If it matches any of the keys in the map file, then the map element will return as associated value.
+
+Like sets, we can include a "default" category when the wildcard contents does not match an item in the map.
+
+    <category>
+    <pattern>WHAT IS THE CAPITAL OF *</pattern>
+    <template>I don't know the capital of <star/>.</template>
+    </category>
+    
+>**Input**: What is the capital of Pennsyltucky?  
+**Output**: I don't know the capital of Pennsyltucky.  
+
+Map files are simple string array, such as: 
+
+    [[“Texas”, "Austin"],[“California”, "Sacramento"]]  
