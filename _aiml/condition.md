@@ -35,3 +35,18 @@ If the list element contains no value attribute, it will be returned in the case
     </category>
 
 In this example, the bot will check the value of a predicate named `gender`. In the case that the predicate's value is either `"male"` or `"female"`, one of the first two list elements will be returned. If neither of these conditions is met, then the third list element will be returned.
+
+You can also use conditionals to check the status of a predicate, i.e. whether or not it has been set.
+
+    <category>
+    <pattern>WHAT IS MY NAME</pattern>
+    <template>
+    <condition name="firstname">
+      <li value="unknown">You haven't told me your name.</li>
+      <li>Your name is <get name="firstname" /></li>
+    </condition>
+    </template>
+    </category>
+
+NOTE: if a predicate hasn't been set with a value yet, the value will be "unknown" based on bot property `default-get`.
+
