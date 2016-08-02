@@ -38,3 +38,22 @@ Using `<li>` inside of a `<condition>` element:
         </condition>
       </template>
     </category>
+
+##### Attributes vs. Tags
+
+In AIML 2.0, any value given by an XML attribute may also be expressed using a subtag of the same name. For example:
+
+    <li value="x">   -->    <li><value>X</value>
+
+This makes it possible to vary the values of attributes using XML expressions, for example:
+
+    <category>
+    <pattern>IS * EQUAL TO *</pattern>
+    <template>
+      <think><set var="star"><star/></set></think>
+      <condition var="star">
+        <li><value><star index="2"/></value>Yes.</li>
+        <li>No.</li>
+      </condition>
+    </template>
+    </category>
