@@ -75,7 +75,7 @@ This is simple but is not as flexible. This solution would not take into conside
 
 ### Wildcards & Keywords
 
-Using wildcards in AIML pattern matching for your symbolic reductions can be more flexible. Start by identifying common words (i.e. keywords) in all your questions with the same answers. For example:
+Using [wildcards in AIML](http://docs.pandorabots.com/tutorials/wildcards/) pattern matching for your symbolic reductions can be more flexible. Start by identifying common words (i.e. keywords) in all your questions with the same answers. For example:
 
     <category>
       <pattern>_ SIGN UP _</pattern>
