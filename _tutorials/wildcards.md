@@ -14,8 +14,7 @@ The Ultimate Default Category (UDC) is used by the bot to provide an answer if n
     
 We use an asterisk `*` in the pattern to capture the user's input. This symbol in AIML is known as a wildcard.
 
-Wildcards are used to capture many inputs using only a single category. 
-There are a number of different wildcards that can be used in AIML.
+Wildcards are used to capture many inputs using only a single category. There are a number of different wildcards that can be used in AIML. Please note that wildcards apply only to words and not characters within a word!
 
 ## The * Wildcard
 
@@ -30,7 +29,7 @@ Hello Daniel.
 Hello my good friend.  
 Hello, anyone there?  
 
-But **not** the word "Hello" by itself, bacuase there must be at least one word captured by the `*` wildcard to form a match.
+But **not** the word "Hello" by itself, because there must be at least one word captured by the `*` wildcard to form a match.
 
 ## The ^ Wildcard
 
