@@ -56,4 +56,4 @@ In this example below, it shows how to use the normalized version in your *that 
     <template>My favorite is Lady Grey!</template>
     </category>
     
-
+Tip: Remember when crafting your `<that>` tag, use only the _last_ sentence of your bot's response! That is why the `that` tag in the category above only has the normalized "DO NOT YOU AGREE" and does not include the previous sentence of "IT IS A CIVILIZED DRINK".
