@@ -52,6 +52,9 @@ If the input contained a string not found in the set, then that pattern would no
 
     [["red"],["orange"],["yellow"],["green"],["blue"],["indigo"]]
 
+Note that currently on the Pandorabots platform, set files cannot be dynamically updated using AIML. You will have to build this feature in your application using our bot development APIs (i.e. retrieve file, upload file, compile bot).
+
+---
 
 ### SET USED IN TEMPLATE 
 
