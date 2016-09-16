@@ -55,12 +55,12 @@ If the input contained a string not found in the set, then that pattern would no
 
 ### SET USED IN TEMPLATE 
 
-In a category's template, the *set element* is used to set a predicate variable. Predicates are not hardcoded like properties, and can be initialized during conversation. This means that input from the user can be echoed in the value of a predicate.
+In a category's template, the *set element* is used to set a predicate variable. Predicates are not hardcoded like properties, and can be initialized during a conversation. This means that input from the user can be echoed in the value of a predicate.
 
 #### Attributes
 
 `name` (required)
-The name attribute specifies a name for the predicate you will set. The predicate can then be recalled under the same name using the get element.
+The name attribute specifies a name for the predicate you will set. The predicate can then be recalled under the same name using the get element. If you are setting a local variable rather than a predicate, use the `var` attribute instead.
 
 #### Usage
 
@@ -81,3 +81,6 @@ The name attribute specifies a name for the predicate you will set. The predicat
 **Input:** What is my name?  
 **Output:** Your name is Daniel.  
 
+Note that there is no way to remove a predicate once it has been set to a value. You can overwrite it to a blank value such as:
+
+    <set name="username"></set>
