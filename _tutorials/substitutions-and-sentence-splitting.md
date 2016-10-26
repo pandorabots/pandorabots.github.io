@@ -85,7 +85,7 @@ You can see that this file was also designed to normalize contractions, as well 
 
 Note: The category described here is a very useful utility for debugging your bot! It’s a great tool to have available for use during development.
 
-Please make sure you review it to see how inputs will be normalized. Some of the default normalization may not work for your use case, and you have the ability to customize the file as needed. 
+Please make sure you review the default normal.substitution file to see how inputs will be normalized. Some of the default normalization may not work for your use case, and you have the ability to customize the file as needed (removing substitutions, changing them or adding new ones).  
 
 **denormal.substitution**
 
