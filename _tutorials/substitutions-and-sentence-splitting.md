@@ -70,7 +70,7 @@ Output: pandorabots dot com
     <template><star/></template>
     </category>
 
-This simple category allows us to see the AIML preprocessor at work. The normalize.substitution file defines the key ".com" with the value "dot com" (the AIML interpreter was designed to ignore punctuation). By echoing the wildcard contents, we can see the "normalized" input string that matched the pattern. Try out some additional inputs to see other normalizations in action:
+This simple category allows us to see the AIML preprocessor at work. The normalize.substitution file defines the key ".com" with the value "dot com". By echoing the wildcard contents, we can see the "normalized" input string that matched the pattern. Try out some additional inputs to see other normalizations in action:
 
 Input: Say I can’t hear you.  
 Output: I can not hear you 
@@ -84,6 +84,8 @@ Output: because
 You can see that this file was also designed to normalize contractions, as well as some commonly mistyped words. Expanding this file will greatly increase your bot’s ability to understand inputs even when typos are present!
 
 Note: The category described here is a very useful utility for debugging your bot! It’s a great tool to have available for use during development.
+
+Please make sure you review it to see how inputs will be normalized. Some of the default normalization may not work for your use case, and you have the ability to customize the file as needed. 
 
 **denormal.substitution**
 
