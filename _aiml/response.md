@@ -16,7 +16,7 @@ Specifies the historical index of the bot response to recall. `index="0"` refers
 
     <category>
     <pattern>WHAT DID YOU JUST SAY</pattern>
-    <template><request index="1" /></template>
+    <template><response index="1" /></template>
     </category>
 
 >**Input:** Hi  
