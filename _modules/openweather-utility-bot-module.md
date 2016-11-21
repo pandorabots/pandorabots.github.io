@@ -3,7 +3,7 @@ layout: default
 title: OpenWeather
 ---
 
-# OpenWeather Utility Bot Module
+# OpenWeather
 
 Certain dynamic information like the weather may be difficult or impossible to hard-code in AIML in advance. Enter bot modules, a handy solution for interfacing with third-party APIs, external knowledge or back-end databases, and more.
 
