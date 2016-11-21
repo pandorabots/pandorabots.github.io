@@ -3,7 +3,7 @@ layout: default
 title: Mitsuku
 ---
 
-# Mitsuku Module
+# Mitsuku 
 
 The Mitsuku Module is a bot module ported from the award-winning [Mitsuku chatbot](http://www.mitsuku.com/). It was designed as an integration in a bot network, to serve as a personality layer or general knowledge/conversational back-end. Bot modules abstract a lot of the work that goes into creating a robust, fully-featured chatbot system.
 
