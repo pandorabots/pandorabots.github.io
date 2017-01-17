@@ -24,12 +24,12 @@ In order to integrate the Mitsuku Module with your bot, you’ll have to include
     <!-- mitsukumodule request handler from routes.aiml -->
     <category>
       <pattern>XMITSUKUMODULE *</pattern>
-      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix></srai></template> 
+      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix> XENDX</srai></template> 
     </category>
 
     <!-- mitsukumodule response handlers from routes.aiml -->
     <category>
-      <pattern>XMITSUKUMODULE XRESPONSE *</pattern>
+      <pattern>XMITSUKUMODULE XRESPONSE * XENDX</pattern>
       <template><star/></template>
     </category>
 
@@ -48,7 +48,7 @@ You can target more specific inputs by using context and pattern-matching. For e
     <topic name="soccer">
     <category>
       <pattern>*</pattern>
-      <template><sraix><bot><bot name="mitsukumodule"></bot><star/></sraix> </template>
+      <template><srai>XMITSUKUMODULE RESPONSE <sraix><bot><bot name="mitsukumodule"></bot><star/></sraix> XENDX</srai></template>
     </category>
     </topic>
 
@@ -59,7 +59,7 @@ You can override the Mitsuku Module’s name by wrapping the <sraix> element des
     <!-- Modified request handler for mitsukumodule in routes.aiml -->
     <category>
       <pattern>XMITSUKUMODULE *</pattern>
-      <template><srai>XMITSUKUMODULE XRESPONSE <denormalize><sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix></denormalize></srai></template>
+      <template><srai>XMITSUKUMODULE XRESPONSE <denormalize><sraix><bot><bot name="mitsukumodule"/></bot><star/></sraix></denormalize> XENDX</srai></template>
     </category>
 
 Then, modify the denormal.substitutions file to include the following key-value pair as a substitution (use your intended name as the second item):
@@ -80,7 +80,7 @@ You also have the option to intercept a response from Mitsuku module before it i
     <!-- mitsukumodule request handler from routes.aiml -->
     <category>
       <pattern>XMITSUKUMODULE *</pattern>
-      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"></bot><star/></sraix></template>
+      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"></bot><star/></sraix> XENDX</srai></template>
     </category>
 
 From the initial routing AIML described above, you’ll notice that the `<sraix>` route to the Mitsuku Module is wrapped in an `<srai>` tag. This allows you to redirect module’s response to another category in your bot, for additional processing before a response is returned to the user. We’ve prepended the string XMITSUKUMODULE to mark inputs that have been received by Mitsuku Module.
