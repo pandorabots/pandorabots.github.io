@@ -80,8 +80,8 @@ You also have the option to intercept a response from Mitsuku module before it i
     <!-- mitsukumodule request handler from routes.aiml -->
     <category>
       <pattern>XMITSUKUMODULE *</pattern>
-      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule"></bot><star/></sraix> XENDX</srai></template>
-    </category>
+      <template><srai>XMITSUKUMODULE XRESPONSE <sraix><bot><bot name="mitsukumodule" /></bot><star/></sraix> XENDX </srai></template>
+      </category>
 
 From the initial routing AIML described above, you’ll notice that the `<sraix>` route to the Mitsuku Module is wrapped in an `<srai>` tag. This allows you to redirect module’s response to another category in your bot, for additional processing before a response is returned to the user. We’ve prepended the string XMITSUKUMODULE to mark inputs that have been received by Mitsuku Module.
 
@@ -94,12 +94,12 @@ From the initial routing AIML described above, you’ll notice that the `<sraix>
 This category will now capture all responses returned by the module. You can then write additional patterns beginning with XMITSUKUMODULE to capture certain responses. For example, to handle a recursion error gracefully:
 
     <category>
-      <pattern>XMITSUKUMODULE XRESPONSE TOO MUCH RECURSION IN AIML</pattern>
+      <pattern>XMITSUKUMODULE XRESPONSE TOO MUCH RECURSION IN AIML XENDX</pattern>
       <template>I’m sorry, I am pretty busy right now.</template>
     </category>
 
     <category>
-      <pattern>XMITSUKUMODULE XRESPONSE SRAIXFAILED</pattern>
+      <pattern>SRAIXFAILED</pattern>
       <template>I’m sorry, I am pretty busy right now.</template>
     </category>
 
