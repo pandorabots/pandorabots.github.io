@@ -87,7 +87,7 @@ From the initial routing AIML described above, you’ll notice that the `<sraix>
 
     <!-- "response handler" in routes.aiml -->
     <category>
-      <pattern>XMITSUKUMODULE XRESPONSE *</pattern>
+      <pattern>XMITSUKUMODULE XRESPONSE * XENDX</pattern>
       <template><star/></template>
     </category>
 
