@@ -47,8 +47,8 @@ Hello, anyone there?
 
 What if both patterns exist? Which one will form a match? 
 
-#### HELLO *
-#### HELLO ^
+#### HELLO * 
+#### HELLO ^ 
 
 Wildcards are ranked in order of priority, so that certain patterns will take precedence over others.
 
