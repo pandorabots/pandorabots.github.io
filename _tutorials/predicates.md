@@ -19,7 +19,7 @@ In programming, a variable is a symbol whose value can be changed; AIML has vari
 * Properties - global constants for a bot. Can only be changed by the botmaster.
 * Predicates - global variables for the bot. Usually set by the client when a template is activated.
 * Local variables - which are just like predicates, except their scope is limited to one category.
-* System built ins - `that` and `topic` are special type of predicates that are usually set by the client when a template is activated. These will be discussed in a different tutorial. 
+* System built ins - `that` and `topic` are special type of variable that are usually set by the client when a template is activated. Note that these values are only valid during an active conversation, and are not persistent.
 
 ### Using Properties
 For example, you can use a property to store your bot's age. Create a new property with the name "age" and the value "8" in your bot's properties file**. Then insert this category:
