@@ -16,7 +16,7 @@ In our previous post on [Bot Possession](http://blog.pandorabots.com/bot-possess
 You can grab the source code for this tutorial from its [repository on Github](https://github.com/pandorabots/pb-logs-firebase):
 
 ```
-$ git clone https://github.com/djfdev/pb-logs-firebase.git
+$ git clone https://github.com/pandorabots/pb-logs-firebase.git
 $ cd pb-logs-firebase
 ```
 
