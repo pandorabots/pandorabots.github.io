@@ -94,7 +94,7 @@ You'll also want to add the Pandorabots script to the array in `external-scripts
       ...
     ]
 
-In many of our other tutorials, we've stored Pandorabots API credentials in JSON files or as variables. But for our use on a server, we're actually just going to set these as environment variables for Hubot to search for. Grab your `app_id` and `user_key` from the [Developer Portal](http://chatbots.io), and pick out one of your already deployed bot names. Make sure you are in the `mybot` directory:
+In many of our other tutorials, we've stored Pandorabots API credentials in JSON files or as variables. But for our use on a server, we're actually just going to set these as environment variables for Hubot to search for. Grab your `app_id` and `user_key` from the [Developer Portal](http://chatbots.io), and pick out one of your already deployed bot names. Make sure you are in the `mybot` directory (NOTE: this command works for setting environment variables supported in Linux/OS X but not Windows):
 
     mybot$ export app_id=**********
     mybot$ export user_key=********
