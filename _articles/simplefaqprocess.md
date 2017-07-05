@@ -1,3 +1,9 @@
+---
+layout: default
+title: Simple FAQ Chatbot
+---
+
+
 # Developing a simple FAQ chatbot in AIML
 
 A Frequently Asked Questions (FAQ) chatbot connected to a messaging platform or to your website, is a great use case for a Pandorabot. We've come up with an approach to build a quick FAQ chatbot. The purpose of this article is to step you through the thought process of this approach for a limited set of FAQs.
