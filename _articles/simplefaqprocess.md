@@ -8,7 +8,7 @@ title: Simple FAQ Chatbot
 
 A Frequently Asked Questions (FAQ) chatbot connected to a messaging platform or to your website, is a great use case for a Pandorabot. We've come up with an approach to build a quick FAQ chatbot. The purpose of this article is to step you through the thought process of this approach for a limited set of FAQs.
 
-This process assumes you understand basic AIML terminology such as [categories](http://pandorabots.github.io/aiml/category/), [symbolic reductions](http://pandorabots.github.io/aiml/srai/) and wildcards.
+This process assumes you understand basic AIML terminology such as [categories](http://pandorabots.github.io/aiml/category/), [symbolic reductions](http://pandorabots.github.io/aiml/srai/) and [wildcards](http://docs.pandorabots.com/tutorials/wildcards/).
 
 ## Step 1: Gather your list of questions and answers
 
