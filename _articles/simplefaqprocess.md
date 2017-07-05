@@ -27,7 +27,7 @@ Make sure that all the questions you've listed actually map to the same answer. 
 
 ## Step 2: Develop Canonical Forms
 
-In the example above, you have one answer and at least 6 different ways to ask the same basic question about "sign up". We call the base input, the canonical form. 
+In the example above, you have one answer and at least 6 different ways to ask the same basic question about "sign up". We call the base input, the canonical form (also known as "intents"). 
 
 You can pick one question as your canonical form, and build the base category:
 
