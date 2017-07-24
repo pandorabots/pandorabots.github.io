@@ -70,7 +70,7 @@ Output: pandorabots dot com
     <template><star/></template>
     </category>
 
-This simple category allows us to see the AIML preprocessor at work. The normalize.substitution file defines the key ".com" with the value "dot com". By echoing the wildcard contents, we can see the "normalized" input string that matched the pattern. Try out some additional inputs to see other normalizations in action:
+This simple category allows us to see the AIML preprocessor at work. The normal.substitution file defines the key ".com" with the value "dot com". By echoing the wildcard contents, we can see the "normalized" input string that matched the pattern. Try out some additional inputs to see other normalizations in action:
 
 Input: Say I can’t hear you.  
 Output: I can not hear you 
