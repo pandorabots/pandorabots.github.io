@@ -1,3 +1,7 @@
+# PLEASE NOTE: Pandorabots Documentation has migrated to: https://www.pandorabots.com/docs/
+
+As a result the repo below has been deprecated, but please feel free to fork it for your own projects or use. 
+
 # pandorabots.github.io
 
 Welcome to the Pandorabots documentation site! Here you'll find instructions on
